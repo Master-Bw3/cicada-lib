@@ -5,7 +5,11 @@ import org.joml.Vector3d;
 import org.joml.Vector3dc;
 
 public interface ConvertibleVec3d {
-    Vector3d toVector3d();
+    default Vector3d toVector3d() {
+        throw new IllegalStateException();
+    }
 
-    Vec3d fromVector3d(Vector3dc vector);
+    default Vec3d fromVector3d(Vector3dc vector) {
+        throw new IllegalStateException();
+    }
 }
